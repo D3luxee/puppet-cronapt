@@ -1,7 +1,7 @@
 #
 class cronapt::params {
 
-    $ensure = 'installed'
+    $package_ensure = 'installed'
     $packages = ['cron-apt']
 
     $cron_aptcommand = '/usr/bin/apt-get'
@@ -45,41 +45,41 @@ class cronapt::params {
 
     #The directory where the actions is stored.
 
-    $actiondir = '/etc/cron-apt/action.d'
+    $cron_actiondir = '/etc/cron-apt/action.d'
 
     # The directory where configuration per action is stored. The message file
     # must have the same name as the action file.
-    $actionconfdir = '/etc/cron-apt/config.d'
+    $cron_actionconfdir = '/etc/cron-apt/config.d'
 
     # The directory where messages that will be prepended to the email that is
     # sent (per action) is stored. The message file must have the same name as
     # the action file.
-    $mailmsgdir = '/etc/cron-apt/mailmsg.d'
+    $cron_mailmsgdir = '/etc/cron-apt/mailmsg.d'
 
     # The directory where messages that will be prepended to text that is
     # sent (per action) to syslog. The message file must have the same name as
     # the action file.
-    $syslogmsgdir = '/etc/cron-apt/syslogmsg.d'
+    $cron_syslogmsgdir = '/etc/cron-apt/syslogmsg.d'
 
     # The directory where messages that will be prepended to the error message
     # (per action) is stored. The message file must have the same name as
     # the action file.
-    $errormsgdir = '/etc/cron-apt/errormsg.d'
+    $cron_errormsgdir = '/etc/cron-apt/errormsg.d'
 
     # The directory where messages that will be prepended to the log (debug)
     # message (per action) is stored. The message file must have the same name as
     # the action file.
-    $logmsgdir = '/etc/cron-apt/logmsg.d'
+    $cron_logmsgdir = '/etc/cron-apt/logmsg.d'
 
     # The directory where messages that will be prepended to the mail message
     # (per MAILON type) is stored. The message file must have the same name as
     # the MAILON directive.
-    $mailonmsgdir = '/etc/cron-apt/mailonmsgs'
+    $cron_mailonmsgdir = '/etc/cron-apt/mailonmsgs'
 
     # The directory where messages that will be prepended to the syslog message
     # (per SYSLOGON type) is stored. The message file must have the same name as
     # the SYSLOGON directive.
-    $syslogonmsgdir = '/etc/cron-apt/syslogonmsgs'
+    $cron_syslogonmsgdir = '/etc/cron-apt/syslogonmsgs'
 
     $purgedir = true
 }

@@ -5,7 +5,7 @@ define action_mailmsg (
   $mailmsgstr = undef,
   ) {
     if $mailmsgstr {
-      file { "${::cronapt::mailmsgdir}/${priority}-${title}":
+      file { "${::cronapt::cron_mailmsgdir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
         content => $mailmsgstr,

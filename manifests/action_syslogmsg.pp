@@ -5,7 +5,7 @@ define action_syslogmsg (
   $syslogmsgstr = undef,
   ) {
     if $syslogmsgstr {
-      file { "${::cronapt::syslogmsgdir}/${priority}-${title}":
+      file { "${::cronapt::cron_syslogmsgdir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
         content => $syslogmsgstr,

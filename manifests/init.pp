@@ -5,7 +5,7 @@
 #
 # Parameters:
 #
-# [*ensure*]
+# [*package_ensure*]
 #   Passed to the cron-apt package.
 #   Defaults to 'installed'
 #
@@ -13,11 +13,7 @@
 #   cron-apt package name.
 #   Defaults to 'cron-apt'
 #
-# [*cron_actions*]
-#   Defines some predefined default actions.
-#   Defaults to ['update', 'download']
-#   Can be set to undef to remove all default configurations
-#
+
 # [*cron_mail*]
 #   Defines the email address to send mail to.
 #   Defaults to 'root'
@@ -34,49 +30,49 @@
 #   When to log to the cron-apt log file.
 #   Defaults to 'output'
 #
-# [*actiondir*]
+# [*cron_actiondir*]
 #   The directory where configuration per action is stored.
 #   Defaults to '/etc/cron-apt/action.d'
 #
-# [*actionconfdir*]
+# [*cron_actionconfdir*]
 #   The directory where configuration per action is stored.
 #   Defaults to '/etc/cron-apt/config.d'
 #
-# [*mailmsgdir*]
+# [*cron_mailmsgdir*]
 #   The directory where messages that will be prepended to the email that is
 #   sent (per action) is stored.
 #   Defaults to '/etc/cron-apt/mailmsg.d'
 #
-# [*syslogmsgdir*]
+# [*cron_syslogmsgdir*]
 #   The directory where messages that will be prepended to text that is
 #   sent (per action) to syslog.
 #   Defaults to '/etc/cron-apt/syslogmsg.d'
 #
-# [*errormsgdir*]
+# [*cron_errormsgdir*]
 #   The directory where messages that will be prepended to the error message
 #   (per action) is stored.
 #   Defaults to '/etc/cron-apt/errormsg.d'
 #
-# [*logmsgdir*]
+# [*cron_logmsgdir*]
 #   The directory where messages that will be prepended to the log (debug)
 #   message (per action) is stored.
 #   Defaults to '/etc/cron-apt/logmsg.d'
 #
-# [*mailonmsgdir*]
+# [*cron_mailonmsgdir*]
 #   The directory where messages that will be prepended to the mail message
 #   (per MAILON type) is stored.
 #   Defaults to '/etc/cron-apt/mailonmsgs'
 #
-# [*syslogonmsgdir*]
+# [*cron_syslogonmsgdir*]
 #   The directory where messages that will be prepended to the syslog message
 #   (per SYSLOGON type) is stored.
 #   Defaults to '/etc/cron-apt/syslogonmsgs'
-# [*purgeDir*]
+# [*purgedir*]
 #   Global purge config dir variable
 #   Defaults to true
 class cronapt (
     #cron-apt::install parameters:
-    $ensure = $cronapt::params::ensure_install,
+    $package_ensure = $cronapt::params::package_ensure,
     $packages = $cronapt::params::packages,
     #cron-apt parameters:
     $cron_aptcommand = $cronapt::params::cron_aptcommand,
@@ -84,14 +80,14 @@ class cronapt (
     $cron_mail_on = $cronapt::params::cron_mail_on,
     $cron_syslog_on = $cronapt::params::cron_syslog_on,
     $cron_debug = $cronapt::params::cron_debug,
-    $actiondir = $cronapt::params::actiondir,
-    $actionconfdir = $cronapt::params::actionconfdir,
-    $mailmsgdir = $cronapt::params::mailmsgdir,
-    $syslogmsgdir = $cronapt::params::syslogmsgdir,
-    $errormsgdir = $cronapt::params::errormsgdir,
-    $logmsgdir = $cronapt::params::logmsgdir,
-    $mailonmsgdir = $cronapt::params::mailonmsgdir,
-    $syslogonmsgdir = $cronapt::params::syslogonmsgdir,
+    $cron_actiondir = $cronapt::params::cron_actiondir,
+    $cron_actionconfdir = $cronapt::params::cron_actionconfdir,
+    $cron_mailmsgdir = $cronapt::params::cron_mailmsgdir,
+    $cron_syslogmsgdir = $cronapt::params::cron_syslogmsgdir,
+    $cron_errormsgdir = $cronapt::params::cron_errormsgdir,
+    $cron_logmsgdir = $cronapt::params::cron_logmsgdir,
+    $cron_mailonmsgdir = $cronapt::params::cron_mailonmsgdir,
+    $cron_syslogonmsgdir = $cronapt::params::cron_syslogonmsgdir,
     $purgedir = $cronapt::params::purgedir,
     ) inherits cronapt::params {
 

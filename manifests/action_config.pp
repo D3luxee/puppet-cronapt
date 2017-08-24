@@ -5,7 +5,7 @@ define action_config (
   $configstr = undef,
   ) {
     if $configstr {
-      file { "${::cronapt::actionconfdir}/${priority}-${title}":
+      file { "${::cronapt::cron_actionconfdir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
         content => $configstr,

@@ -5,6 +5,6 @@ class cronapt::install {
 
     # Install
     package { $::cronapt::packages :
-        ensure => $::cronapt::ensure
+        ensure => $::cronapt::package_ensure
     }
 }

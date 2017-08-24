@@ -5,7 +5,7 @@ define cronapt::action_mailonmsg(
   $mailonmsgstr = undef,
   ) {
     if $mailonmsgstr {
-      file { "${::cronapt::mailonmsgdir}/${priority}-${title}":
+      file { "${::cronapt::cron_mailonmsgdir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
         content => $mailonmsgstr,

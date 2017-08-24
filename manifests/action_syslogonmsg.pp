@@ -5,7 +5,7 @@ define cronapt::action_syslogonmsg(
   $syslogonmsgstr = undef,
   ) {
     if $syslogonmsgstr {
-      file { "${::cronapt::syslogonmsgdir}/${priority}-${title}":
+      file { "${::cronapt::cron_syslogonmsgdir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
         content => $syslogonmsgstr,
