@@ -79,6 +79,7 @@ class cronapt (
     $ensure = $cronapt::params::ensure_install,
     $packages = $cronapt::params::packages,
     #cron-apt parameters:
+    $cron_aptcommand = $cronapt::params::cron_aptcommand,
     $cron_mail    = $cronapt::params::cron_mail,
     $cron_mail_on = $cronapt::params::cron_mail_on,
     $cron_syslog_on = $cronapt::params::cron_syslog_on,

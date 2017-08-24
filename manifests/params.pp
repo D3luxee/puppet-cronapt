@@ -4,6 +4,7 @@ class cronapt::params {
     $ensure = 'installed'
     $packages = ['cron-apt']
 
+    $cron_aptcommand = '/usr/bin/apt-get'
     # The email address to send mail to.
     $cron_mail = 'root'
 
@@ -16,8 +17,6 @@ class cronapt::params {
     #                (else never send mail)
     $cron_mail_on = 'error'
 
-    # Which actions (files in this module) to enable
-    $cron_actions = ['update', 'download']
 
 
     #When to log the cron-apt results to syslog.

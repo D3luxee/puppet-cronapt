@@ -29,6 +29,7 @@ class cronapt::configure {
     augeas { 'cronapt-mail_config' :
         context => '/files/etc/cron-apt/config',
         changes => [
+                      "set APTCOMMAND ${::cronapt::cron_aptcommand}",
                       "set MAILON ${mail_on_value}",
                       "set MAILTO ${::cronapt::cron_mail}",
                       "set SYSLOGON ${syslog_on_value}",
