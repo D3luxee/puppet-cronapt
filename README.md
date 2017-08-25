@@ -1,6 +1,10 @@
 # Module: cronapt
 
 [![Puppet Forge](http://img.shields.io/puppetforge/v/d3luxee/cronapt.svg)](https://forge.puppetlabs.com/d3luxee/cronapt)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/d3luxee/cronapt.svg)](https://forge.puppetlabs.com/d3luxee/cronapt)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/d3luxee/cronapt.svg)](https://forge.puppetlabs.com/d3luxee/cronapt)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/d3luxee/cronapt.svg)](https://forge.puppetlabs.com/d3luxee/cronapt)
+
 
 ## Description
 
