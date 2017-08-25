@@ -2,13 +2,13 @@
 #
 define cronapt::action_logmsg(
   $priority = undef,
-  $logmsgstr = undef,
+  $content = undef,
   ) {
-    if $logmsgstr {
+    if $content {
       file { "${::cronapt::cron_logmsgdir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
-        content => $logmsgstr,
+        content => $content,
       }
     }
   }

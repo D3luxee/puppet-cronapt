@@ -12,7 +12,7 @@ Use it in combination with a module to manage APT and Sources like: [puppetlabs-
 
 ## Compatibility
 
-Latest versions of this module (1.0) are only supported on Puppet 3.0+.
+Latest versions of this module (1.0) are only supported on Puppet >= 3.X
 
 ## Usage
 
@@ -37,8 +37,7 @@ class { 'cronapt': }
 ```
 
 #### Parameters
-Further information about the cron_ parameters can be found within the official cron-apt readme.
-[cron-apt-readme]https://raw.githubusercontent.com/D3luxee/puppet-cronapt/master/cron-apt-readme.txt
+Further information about the cron_ parameters can be found within the official [cron-apt readme](https://raw.githubusercontent.com/D3luxee/puppet-cronapt/master/cron-apt-readme.txt)
 
 * `package_ensure`: Default 'installed', can be any supported ensure type for the package resource
 * `packages`: Name of the package to install. (default: cron-apt)

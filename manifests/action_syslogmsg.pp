@@ -2,13 +2,13 @@
 #
 define action_syslogmsg (
   $priority = undef,
-  $syslogmsgstr = undef,
+  $content = undef,
   ) {
-    if $syslogmsgstr {
+    if $content {
       file { "${::cronapt::cron_syslogmsgdir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
-        content => $syslogmsgstr,
+        content => $content,
       }
     }
 }

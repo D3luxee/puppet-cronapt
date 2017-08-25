@@ -2,13 +2,13 @@
 #
 define cronapt::action_errormsg(
   $priority = undef,
-  $errormsgstr = undef,
+  $content = undef,
   ) {
-    if $errormsgstr {
+    if $content {
       file { "${::cronapt::cron_errormsgdir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
-        content => $errormsgstr,
+        content => $content,
       }
     }
   }
