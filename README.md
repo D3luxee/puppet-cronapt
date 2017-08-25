@@ -57,8 +57,47 @@ Further information about the cron_ parameters can be found within the official 
 
 # Resource Types
 
+The cronapt module contains types and providers to manage actions and all action related configurations. The following types are currently supported.
+
+* [action](#action-example)
+* [action_config](#action-example)
+* [action_mailmsg](#action-example)
+* [action_syslogmsg](#action-example)
+* [action_errormsg](#action-example)
+* [action_logmsg](#action-example)
+* [action_mailonmsg](#action-example)
+* [action_syslogonmsg](#action-example)
+
+Note, it is always recommended to include the `cronapt` class if you are going to  use any of these resources from another Puppet class (eg: a profile)  because it sets up the configuration parameters and all resources above rely on those.
+
+## Action example
+
+All action* resource types are structured in the same way, they provide two parameters.
+Therefor i will only provide an example to use the _action_ resource in combination with the _action_config_ resource.
+
+_Example in Class_:
+
+```puppet
+  cronapt::action { 'security':
+    priority         => '5',
+    content          => 'upgrade -d -y -o APT::Get::Show-Upgraded=true',
+  }
+
+  cronapt::action_config { 'security':
+    priority         => '5',
+    content          => "OPTIONS=\"-q -o Dir::Etc::SourceList=/etc/apt/sources.list.d/security.list -o Dir::Etc::SourceParts=\\\"/dev/null\\\"\"",
+  }
+```
+This will create the file 5-security within the folder specified with the $cron_actiondir and $cron_actionconfdir variable the files will contain the specified $content.
+
+#### Parameters
+
+* `priority`: Specify file order.
+* `content`: Specify the content of the file resource.
 
 
-## Parting Words
 
-This example provides full hands-off automatic updates of packages.  Don't be scared.
+
+# Author
+
+* Written and maintained by Georg Doser <georgdoser@neuland.tech>
