@@ -1,6 +1,6 @@
 # == Define: action_mailmsg
 #
-define action_mailmsg (
+define cronapt::action_mailmsg (
   $priority = undef,
   $content = undef,
   ) {

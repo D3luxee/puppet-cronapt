@@ -2,13 +2,13 @@
 #
 define cronapt::action(
   $priority = undef,
-  $actionstr = undef,
+  $content = undef,
   ) {
-    if $actionstr {
+    if $content {
       file { "${::cronapt::cron_actiondir}/${priority}-${title}":
         ensure  => file,
         mode    => '0644',
-        content => $actionstr,
+        content => $content,
       }
     }
   }

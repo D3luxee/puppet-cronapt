@@ -1,6 +1,6 @@
 # == Define: action_syslogmsg
 #
-define action_syslogmsg (
+define cronapt::action_syslogmsg (
   $priority = undef,
   $content = undef,
   ) {

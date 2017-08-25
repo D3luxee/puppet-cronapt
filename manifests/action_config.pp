@@ -1,6 +1,6 @@
 # == Define: action_config
 #
-define action_config (
+define cronapt::action_config (
   $priority = undef,
   $content = undef,
   ) {
