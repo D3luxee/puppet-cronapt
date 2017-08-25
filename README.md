@@ -88,10 +88,7 @@ _Example in Class_:
     content          => "OPTIONS=\"-q -o Dir::Etc::SourceList=/etc/apt/sources.list.d/security.list -o Dir::Etc::SourceParts=\\\"/dev/null\\\"\"",
   }
 ```
-<<<<<<< HEAD
 This will create the file 5-security within the folder specified with the $cron_actiondir and $cron_actionconfdir variable the files will contain the specified $content.
-=======
->>>>>>> 08709cf6fc9de7382c6e13b3859933f157f40a8a
 
 #### Parameters
 
