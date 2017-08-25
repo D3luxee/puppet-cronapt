@@ -7,7 +7,7 @@
   "source": "https://github.com/D3luxee/puppet-cronapt",
   "project_page": "https://github.com/D3luxee/puppet-cronapt",
   "issues_url": "https://github.com/D3luxee/puppet-cronapt/issues",
-  "tags": ["packages", "apt"],
+  "tags": ["packages", "apt", "cronapt", "cron-apt"],
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian",
