@@ -82,13 +82,13 @@ _Example in Class_:
     priority         => '5',
     content          => 'upgrade -d -y -o APT::Get::Show-Upgraded=true',
   }
-
   cronapt::action_config { 'security':
     priority         => '5',
     content          => "OPTIONS=\"-q -o Dir::Etc::SourceList=/etc/apt/sources.list.d/security.list -o Dir::Etc::SourceParts=\\\"/dev/null\\\"\"",
   }
 ```
 This will create the file 5-security within the folder specified with the $cron_actiondir and $cron_actionconfdir variable the files will contain the specified $content.
+The action and config which we created above will automatically install all security updates. Keep in mind to create the  _/etc/apt/sources.list.d/security.list_ file with another module.
 
 #### Parameters
 
